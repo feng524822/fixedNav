@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+<style type="text/css">
+	.clearfix:after {
+		visibility: hidden;
+		display: block;
+		font-size: 0;
+		content: '';
+		height:0;
+		clear: both;
+	}
+	.clearfix {*zoom: 1;}
+	body,ul,li {margin:0; padding: 0;}
+	ul, li{list-style: none;}
+	.placeholder { width: 100%; height: 200px;}
+	#fixedNav li{width: 20%; height: 40px; line-height: 40px; text-align: center; float: left; background: #888;}
+</style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="fixedNav.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$('#fixedNav').fixedNav();
+	});
+</script>
+</head>
+<body>
+<div class="placeholder">dfdsf</div>
+<ul id="fixedNav" class="clearfix">
+	<li><a href="">0001</a></li>
+	<li><a href="">0002</a></li>
+	<li><a href="">0003</a></li>
+	<li><a href="">0004</a></li>
+	<li><a href="">0005</a></li>
+</ul>
+<div class="placeholder">dfdsf</div>
+<div class="placeholder">dfdsf1</div>
+<div class="placeholder">dfdsf2</div>
+<div class="placeholder">dfdsf3</div>
+<div class="placeholder">dfdsf4</div>
+<div class="placeholder">dfdsf5</div>
+<div class="placeholder">dfdsf6</div>
+<div class="placeholder">dfdsf7</div>
+</body>
+</html>
