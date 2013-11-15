@@ -21,7 +21,7 @@
 			checkList.each(function(index) {
 				var	$this = $(this),
 					arr = [];
-				arr['dWidth'] = $this.width();
+				// arr['dWidth'] = $this.width();
 				arr["startPos"] = $this.offset().top;
 				arr["dTop"] = $this.css('top') || 'auto';
 				arr["dZindex"] = $this.css('z-index') || '1';
@@ -35,9 +35,9 @@
 			checkList.each(function(index) {
 				var $this = $(this);
 				if(scrollTop > tDefault[index]['startPos']+ oMarTop) {
-					$this.css({"position": "fixed", "top": "0", "width": tDefault[index]['dWidth'], "z-index": "999"});
+					$this.css({"position": "fixed", "top": "0", "z-index": "999"});
 				} else {
-					$this.css({"position": tDefault[index]['dPosititon'], "top": tDefault[index]['dTop'], "width": tDefault[index]['dWidth'], "z-index": tDefault[index]['dZindex']});
+					$this.css({"position": tDefault[index]['dPosititon'], "top": tDefault[index]['dTop'], "z-index": tDefault[index]['dZindex']});
 				}
 			});
 			scrollTimer = setTimeout(arguments.callee, 6);
