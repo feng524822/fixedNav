@@ -3,13 +3,19 @@
 	$.fn.fixedNav = function(offset) {
 			var scrollTimer,
 				tDefault = [],
+				loadEnd = false,
 				checkList = this,
 				view  = $(global),
 				oMarTop = offset || 0;
 
 			if(checkList.length) {
-				getDefault();
-				$(window).bind('scroll', function() {
+				$(window).bind("load",function() {
+					getDefault();
+					loadEnd = true;
+				}).bind('scroll', function() {
+					if(!loadEnd) {
+						return;
+					}
 					if(!tDefault.length) {
 						getDefault();
 					}
@@ -38,6 +44,8 @@
 				var scrollTop = view.scrollTop();
 				checkList.each(function(index) {
 					var $this = $(this);
+					console.log("scrollTop:" + scrollTop);
+					console.log("startPos:" + tDefault[index]['startPos']);
 					if(scrollTop > tDefault[index]['startPos'] + oMarTop) {
 						if(tDefault[index]['isFixed']) {return true;}
 						$this.addClass('isFixed').css({"position": "fixed", "top": "0","z-index": "999"});
