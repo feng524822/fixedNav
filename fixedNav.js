@@ -38,7 +38,7 @@
 				var scrollTop = view.scrollTop();
 				checkList.each(function(index) {
 					var $this = $(this);
-					if(scrollTop > tDefault[index]['startPos'] + oMarTop + tDefault[index]['height']) {
+					if(scrollTop > tDefault[index]['startPos'] + oMarTop) {
 						if(tDefault[index]['isFixed']) {return true;}
 						$this.addClass('isFixed').css({"position": "fixed", "top": "0","z-index": "999"});
 						tDefault[index]['isFixed'] = true;
